@@ -1,0 +1,47 @@
+<div class="md-toolbar-tools">
+	<h3>
+		<a class="white" href="#/page/main">{{settings.title}}</a>
+	</h3>
+	<span flex></span>
+
+	<a class="md-button md-ink-ripple" ng-href="{{link.href}}" ng-show="$mdMedia('gt-sm') && user.is(link.access)" ng-repeat="link in site.links">{{link.title}}</a>
+
+	<button class="md-raised md-button md-ink-ripple" type="button" aria-label="Signup" ng-hide="user" ng-click="tools.login()">{{"heading.signup" | translate}}</button>
+	<button class="md-raised md-button md-ink-ripple" type="button" aria-label="Login" ng-hide="user" ng-click="tools.login()">{{"heading.login" | translate}}</button>
+	<!--<button class="md-button md-ink-ripple" type="button" aria-label="User" ng-click="ctrl.openMenu()">{{user.displayName}}</button>-->
+	<a href="#/page/account" ng-show="user"><img ng-src="{{user.photoURL}}" class="md-avatar"></a>
+	<md-menu>
+		<md-button aria-label="Open User Menu" class="md-ink-ripple" ng-click="$mdOpenMenu($event)">
+			{{user.displayName}}
+		</md-button>
+		<md-menu-content width="4">
+			<md-menu-item ng-hide="$mdMedia('gt-sm') || !user.is(link.access)" ng-repeat="link in site.links">
+				<a class="md-button" ng-href="{{link.href}}">
+					{{link.title}}
+				</a>
+			</md-menu-item>
+			
+			<md-menu-item ng-show="user.is(link.access)" ng-repeat="link in site.menuLinks">
+				<a class="md-button" ng-href="{{link.href}}">
+					{{link.title}}
+				</a>
+			</md-menu-item>
+			
+			<md-menu-item>
+				<a class="md-button" href="#/page/account">
+					{{"heading.account" | translate}}
+				</a>
+			</md-menu-item>
+			<md-menu-item ng-show="user.is('admin')">
+				<a class="md-button" href="#/page/admin">
+					{{"heading.admin" | translate}}
+				</a>
+			</md-menu-item>
+			<md-menu-item>
+				<a class="md-button" ng-click="rootTools.feedback()">
+					{{"heading.wish" | translate}}
+				</a>
+			</md-menu-item>
+		</md-menu-content>
+	</md-menu>
+</div>

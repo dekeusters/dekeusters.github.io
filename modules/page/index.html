@@ -1,0 +1,6 @@
+<section layout="column" flex ng-controller="PageCtrl">
+	<div layout="column" flex="100" compile="{{page.html}}"></div>
+	<div style="position:fixed; bottom:0px; padding:5px; box-sizing:border-box; width:100%;" ng-hide="$mdMedia('gt-sm')">
+		<md-button class="md-raised" style="width:100%; margin:0px;" ng-click="tools.edit()" ng-show="user.is('admin')">Edit</md-button>
+	</div>
+</section>

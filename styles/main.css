@@ -1,0 +1,244 @@
+body,html{
+	height:100%
+}
+
+.md-avatar {
+	width: 48px;
+	margin: 16px;
+	border-radius: 48px;
+	border: 1px solid #ddd;
+}
+md-icon{
+    text-align: center;
+    line-height: 24px;
+    height: 24px;
+}
+
+.table {
+	width: 100%;
+}
+.table tr td, .table tr th{
+	padding: 15px 5px;
+}
+.table.table-hover tr th{
+	background: #EFEFEF;
+}
+.table.table-hover tr:hover td{
+	background: #EEE;
+}
+.table.table-striped{
+	background: #FFF;
+}
+.table.table-striped:nth-child(odd){
+	background: #CCC;
+}
+
+.well{
+	padding: 15px;
+}
+.thumbnail{
+	width:150px;
+	height:150px;
+	line-height: 150px;
+	margin: auto auto;
+	text-align: center;
+	vertical-align: middle;
+}
+.thumbnail>i{
+	font-size:50px;
+}
+
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.block{
+	display:block;
+}
+.center{
+	text-align:center;
+}
+.pull-left{
+	float:left !important;
+}
+.pull-right{
+	float:right !important;
+}
+.pull-right i{
+	margin-right: 5px;
+}
+.hideInline{
+	display: none;
+}
+.md-dialog-container .hideInline{
+	display: inherit;
+}
+.hidden{
+	display:none;
+}
+.parent:hover .hidden{
+	display: block;
+}
+*[ng-click]{
+	cursor: pointer;
+}
+md-icon.icon{
+	display: initial;
+}
+md-toolbar md-input-container {
+	top: 15px;
+}
+figcaption{
+	width: 100%;
+}
+md-grid-list md-grid-tile{
+	overflow: hidden;
+}
+.content{
+	overflow: auto;
+}
+
+/*Colors*/
+.white, .white *{
+	color: #FFF !important;
+}
+.blue, .blue *{
+	color: #2196f3 !important;
+}
+.red, .red *{
+	color: #f32121 !important;
+}
+.purple, .purple *{
+	color: #d421f3 !important;
+}
+.green, .green *{
+	color: #49f321 !important;
+}
+.yellow, .yellow *{
+	color: #f3ee21 !important;
+}
+.orange, .orange *{
+	color: #f38d21 !important;
+}
+
+
+
+
+
+
+
+*:not(i){
+	font-family: 'Open Sans', sans-serif;
+}
+.editor .editor *, .ace_editor, .ace_editor *{
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
+}
+
+/*MD Simple Page*/
+.simple{
+	background: #ccc;
+	overflow: auto;
+}
+.simple header{
+	max-height: 300px;
+	overflow: hidden;
+}
+.simple header img{
+	width: 100%;
+}
+.simple header .fa-bars{
+	position: absolute;
+	padding: 10px;
+	font-size: 20px;
+	color: #FFF;
+}
+.simple section{
+	position: relative;
+	top: -100px;
+	margin: 0px auto;
+	width: 80%;
+}
+.simple .title{
+	background: rgba(255,255,255,.5);
+	height: 75px;
+	line-height: 75px;
+	text-align: center;
+}
+.simple .title h1{
+	margin: 0px;
+	font-weight: 300;
+	font-size: 40px;
+}
+.simple md-content{
+	min-height: 100%;
+	background: #FFF;
+}
+
+
+/*Parallax Page*/
+.parallax{
+	background: #666;
+}
+.parallax *:not(i){
+	font-family: 'Open Sans', sans-serif;
+}
+.parallax>section {
+	display: block;
+	min-height: 90%;
+	padding: 0px;
+	margin: 0px;
+}
+.parallax>section>*{
+	margin: 0px;
+}
+.parallax>section>h1{
+	padding: 20px 5%;
+    font-weight: 300;
+    font-size: 30px;
+}
+.parallax .splash{
+	max-height: 90%;
+	min-height: auto;
+	overflow: hidden;
+	color: #FFF;
+}
+.parallax section.splash>h1{
+	padding: 5%;
+	position: absolute;
+}
+.parallax .splash, .splash *{
+	padding: 0px;
+}
+.parallax .splash img{
+	width: 100%;
+	/*height: 100%;*/
+}
+.parallax .gallery{
+	color: #FFF;
+	background: #666;
+}
+.parallax .card{
+	display: inline-block;
+	color: #000;
+}
+
+
+/*OTHER*/
+#feedback{
+	position: fixed;
+	bottom: 15px;
+	right: 30px;
+	background: #003;
+	color: #EEE;
+	border: 2px solid #FFF;
+	box-shadow: 5px 5px 5px #000;
+}
+@media (max-width: 600px) {
+	#feedback{
+		right: -100px;
+	}
+	#feedback:hover{
+		right: 0px;
+	}
+}

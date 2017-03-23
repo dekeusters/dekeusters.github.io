@@ -1,0 +1,20 @@
+<md-dialog layout-padding>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Make A Wish</h2>
+		</div>
+	</md-toolbar>
+
+	<div class="demo-dialog-content">
+		<div>
+			<p>We love making products that help you.  <br>Let us know what we can do to improve.</p>
+			<md-input-container class="md-block">
+				<textarea ng-model="feedback" rows="5" md-select-on-focus></textarea>
+			</md-input-container>
+		</div>
+	</div>
+
+	<div>
+		<md-button class="pull-right" ng-click="send()">Send</md-button>
+	</div>
+</md-dialog>

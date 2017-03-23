@@ -1,0 +1,77 @@
+<md-dialog flex="100" flex-gt-sm="25" layout-padding>
+	<div ng-show="view == 'checkout'">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>{{cart.title}}</h2>
+			</div>
+		</md-toolbar>
+	
+		<div>
+			<p>{{cart.description}}</p>
+			<md-input-container flex class="md-icon-float md-block md-title">
+				<md-select ng-model="cart.method" placeholder="Payment Method">
+					<md-option ng-repeat="method in customer.sources.data" value="{{method.id}}">
+						{{method.brand}} {{method.last4}}
+					</md-option>
+					<md-option ng-click="tools.manage.add()">
+						Add Method
+					</md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+		
+		<div ng-show="error.checkout">
+			{{error.checkout}}
+		</div>
+		
+		<div>
+			<!--<md-button ng-click="tools.manage.add()">Add Method</md-button>-->
+			<md-button class="md-raised pull-right" ng-click="tools.checkout.pay(cart.method)" ng-disabled="!cart.method">Pay {{cart.amount}}</md-button>
+		</div>
+	</div>
+	
+	<div ng-show="view == 'manage'">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Add payment Method</h2>
+			</div>
+		</md-toolbar>
+	
+		<div>
+			<md-input-container class="md-block">
+				<label>Name on card</label>
+				<input ng-model="card.name">
+				<div class="red" ng-show="error.name">{{error.name}}</div>
+			</md-input-container>
+			
+			<md-input-container class="md-block">
+				<label>Number</label>
+				<input ng-model="card.number">
+				<div class="red" ng-show="error.number">{{error.number}}</div>
+			</md-input-container>
+			
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>Expiration (mm/yyyy)</label>
+					<input ng-model="card.exp">
+					<div class="red" ng-show="error.exp">{{error.exp}}</div>
+				</md-input-container>
+			
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>CVC</label>
+					<input ng-model="card.cvc">
+					<div class="red" ng-show="error.cvc">{{error.cvc}}</div>
+				</md-input-container>
+			</div>
+		</div>
+		
+		<div ng-show="error.manage">
+			{{error.manage}}
+		</div>
+	
+		<div>
+			<md-button ng-click="tools.manage.cancel()">Cancel</md-button>
+			<md-button class="md-raised pull-right" ng-click="tools.manage.save()">Add Card</md-button>
+		</div>
+	</div>
+</md-dialog>

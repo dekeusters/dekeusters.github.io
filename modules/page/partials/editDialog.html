@@ -1,0 +1,105 @@
+<md-dialog flex="60" layout-padding>
+	<style type="text/css">
+		.editor{
+			height:400px;
+		}
+	</style>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 class="flex">Edit Page</h2>
+			<i class="fa fa-save" ng-click="tools.save()"></i>
+		</div>
+	</md-toolbar>
+	<md-content>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="html" md-on-select="tools.ace.focus('htmlEditor')">
+				<md-content>
+					<div class="editor" id="htmlEditor"></div>
+				</md-content>
+			</md-tab>
+			<md-tab label="data">
+				<md-content class="md-padding" style="height:368px; overflow:auto;">
+					<div layout-gt-sm="row" ng-repeat="(key, data) in temp.page.data">
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Path</label>
+							<input ng-model="data.path">
+						</md-input-container>
+	
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Alias</label>
+							<input ng-model="data.alias">
+						</md-input-container>
+						
+						<md-input-container class="md-block" flex-gt-sm>
+							<md-switch ng-model="data.array" aria-label="Data Array"><span ng-hide="data.array">Object</span><span ng-show="data.array">Array</span></md-switch>
+						</md-input-container>
+						
+						<md-button flex-gt-sm ng-click="tools.data(key)">
+							Remove
+						</md-button>
+					</div>
+					<div layout-gt-sm="row">
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Path</label>
+							<input ng-model="temp.data.path">
+						</md-input-container>
+	
+						<md-input-container class="md-block" flex-gt-sm>
+							<label>Alias</label>
+							<input ng-model="temp.data.alias">
+						</md-input-container>
+						
+						<md-input-container class="md-block" flex-gt-sm>
+							<md-switch ng-model="temp.data.array" aria-label="Data Array"><span ng-hide="temp.data.array">Object</span><span ng-show="temp.data.array">Array</span></md-switch>
+						</md-input-container>
+						
+						<md-button flex-gt-sm ng-click="tools.data()">
+							Add
+						</md-button>
+					</div>
+					<p>Note: you can use {<span>{uid}</span>},  {<span>{email}</span>},  {<span>{id}</span>} as parameters in the data path.</p>
+				</md-content>
+			</md-tab>
+			<md-tab label="js" md-on-select="tools.ace.focus('jsEditor')">
+				<md-content>
+					<div class="editor" id="jsEditor"></div>
+				</md-content>
+			</md-tab>
+			<md-tab label="templates">
+				<md-content class="md-padding" layout="row" layout-wrap layout-align="space-around" style="height:368px; overflow:auto;">
+					<div flex="100" flex-gt-sm="25" class="md-padding" ng-hide="templates">
+						<div class="md-padding" md-whiteframe="3" ng-click="tools.template.init()">
+							Load
+						</div>
+					</div>
+					<div flex="100" flex-gt-sm="25" class="md-padding" ng-show="templates">
+						<div class="md-padding" md-whiteframe="3" ng-click="tools.template.add()">
+							Add
+						</div>
+					</div>
+					<div flex="100" flex-gt-sm="25" class="md-padding" ng-repeat="t in templates">
+						<div class="md-padding" md-whiteframe="3" ng-click="tools.template.set(t)">
+							<span>{{t.title}}</span>
+							<i class="fa fa-trash pull-right" ng-click="tools.template.remove(t)"></i>
+							<i class="fa fa-save pull-right" ng-click="tools.template.save(t)"></i>
+						</div>
+					</div>
+				</md-content>
+			</md-tab>
+		</md-tabs>
+	</md-content>
+	<md-content layout-padding>
+		<md-dialog-actions layout="row">
+			<md-button ng-click="tools.cancel()">
+				Cancel
+			</md-button>
+			<md-button ng-click="tools.remove()">
+				Delete
+			</md-button>
+			<span flex></span>
+			<md-button ng-click="tools.save()">
+				Save
+			</md-button>
+		</md-dialog-actions>
+	</md-content>
+</md-dialog>

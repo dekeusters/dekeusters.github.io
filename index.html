@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> - </title>
+		
+		<link rel="manifest" href="/manifest.json">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content=" - ">
+		<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+		<meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+		<meta name="msapplication-TileColor" content="#2F3BA2">
+		
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/vendor.css">
+	</head>
+	<body layout="column" ng-cloak>
+<!--<body layout="column" ng-controller="SiteCtrl" md-swipe-right="tools.sidebar('open')" md-swipe-left="tools.sidebar('close')">-->
+		<md-toolbar md-whiteframe="2" ng-include="tools.component('header')"></md-toolbar>
+		<md-content flex layout="row" ng-view></md-content>
+		
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+		
+		<script src="//apis.google.com/js/api.js"></script>
+		<script src="//www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+		<script src="//cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.js"></script> <!--For date-time manipulations-->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script> <!--For Charts-->
+		<script src="//widget.cloudinary.com/global/all.js"></script> <!--For image manipulations-->
+		<script src="//js.stripe.com/v2/"></script> <!--For financial transactions-->
+		<script src="vendor/translate.js"></script> <!-- This is custom, because the cdn version does not work with some other scripts -->
+		<script src="vendor/rl.js"></script> <!--For machine learning-->
+		<script src="vendor/script.js"></script> <!--For lazy loading javascript-->
+		<script src="vendor/mousetrap.js"></script> <!--For keybindings-->
+		<script src="vendor/chance.js"></script> <!--For creating fake content-->
+		<script src="vendor/ace/ace.js"></script> <!--For code editing-->
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/directives.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/custom.js"></script>
+	</body>
+</html>

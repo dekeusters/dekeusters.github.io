@@ -1,0 +1,10 @@
+{
+	"title": "Boilerplate",
+	"heading": {
+		"signup":   "Signup",
+		"login":    "Login",
+		"account":	"My Account",
+		"admin":	"Admin",
+		"wish":		"Make A Wish"
+	}
+}
